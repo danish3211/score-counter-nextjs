@@ -45,14 +45,12 @@ const Score = () => {
 
   const addBall = (result: string) => {
     if (result === "Wide") {
-      const newBall = `${overs}.${ballsInOver.length + 1}: ${result}`;
-      setBallsInOver([...ballsInOver, newBall]);
-      // Don't increment the balls count for wide balls
+      setBallsInOver([...ballsInOver, result]);
       return;
     }
   
     if (balls < 6) {
-      const newBall = `${overs}.${ballsInOver.length + 1}: ${result}`;
+      const newBall = `${overs}.${balls + 1}: ${result}`;
       setBallsInOver([...ballsInOver, newBall]);
       setBalls(balls + 1);
     }
@@ -76,6 +74,10 @@ const Score = () => {
       setWickets(0);
     }
   };
+  
+  
+  
+  
   
   
 
